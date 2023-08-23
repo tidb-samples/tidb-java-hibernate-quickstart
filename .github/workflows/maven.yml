@@ -21,7 +21,7 @@ env:
   TIDB_PASSWORD: ''
   TIDB_DB_NAME: 'test'
   USE_SSL: 'false'
-  TIDB_JDBC_URL: 'jdbc:mysql://127.0.0.1:4000/4000'
+  TIDB_JDBC_URL: 'jdbc:mysql://127.0.0.1:4000/test'
   
 jobs:
   build:
