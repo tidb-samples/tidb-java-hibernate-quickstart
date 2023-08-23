@@ -4,7 +4,7 @@
 
 [English](/README.md) | 中文
 
-这是 PingCAP 为 Hibernate 编写的用于连接 TIDB 的示例项目
+这是 PingCAP 为 Hibernate 编写的用于连接 TiDB 的示例项目
 
 > TiDB 是一个兼容 MySQL 的数据库。[Hibernate](https://hibernate.org/orm/) 是当前比较流行的开源 Java 应用持久层框架，且 Hibernate 在版本 `6.0.0.Beta2` 及以上支持了 TiDB 方言，完美适配了 TiDB 的特性。
 
