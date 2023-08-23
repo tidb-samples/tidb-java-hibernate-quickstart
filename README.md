@@ -1,5 +1,7 @@
 # How to Connect to TiDB Using Hibernate
 
+[![Java CI with Maven](https://github.com/tidb-samples/tidb-java-hibernate-quickstart/actions/workflows/maven.yml/badge.svg)](https://github.com/tidb-samples/tidb-java-hibernate-quickstart/actions/workflows/maven.yml)
+
 English | [中文](/README-zh.md)
 
 This is an example project by PingCAP for connecting to TiDB using the mysqlclient library.

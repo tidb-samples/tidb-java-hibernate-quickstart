@@ -1,5 +1,7 @@
 # 如何用 Hibernate 连接到 TiDB
 
+[![Java CI with Maven](https://github.com/tidb-samples/tidb-java-hibernate-quickstart/actions/workflows/maven.yml/badge.svg)](https://github.com/tidb-samples/tidb-java-hibernate-quickstart/actions/workflows/maven.yml)
+
 [English](/README.md) | 中文
 
 这是 PingCAP 为 mysqlclient 编写的用于连接 TIDB 的示例项目
