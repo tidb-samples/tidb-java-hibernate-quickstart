@@ -4,7 +4,7 @@
 
 [English](/README.md) | 中文
 
-这是 PingCAP 为 mysqlclient 编写的用于连接 TIDB 的示例项目
+这是 PingCAP 为 Hibernate 编写的用于连接 TIDB 的示例项目
 
 > TiDB 是一个兼容 MySQL 的数据库。[Hibernate](https://hibernate.org/orm/) 是当前比较流行的开源 Java 应用持久层框架，且 Hibernate 在版本 `6.0.0.Beta2` 及以上支持了 TiDB 方言，完美适配了 TiDB 的特性。
 
@@ -58,7 +58,7 @@ cd tidb-java-hibernate-quickstart
 
     注意替换 `{}` 中的占位符为 **Connect** 窗口中获得的值。
 
-    TiDB Serverless 要求使用 secure connection，由于 mysqlclient 的 `ssl_mode` 默认为 `PREFERRED`，所以不需要你手动指定 `CA_PATH`，设置为空即可。但如果你有特殊原因需要手动指定 `CA_PATH`，可以参考 [TiDB Cloud 文档](https://docs.pingcap.com/tidbcloud/secure-connections-to-serverless-clusters#root-certificate-default-path)获取不同操作系统下证书的路径。
+    TiDB Serverless 要求使用 secure connection，因此 `USE_SSL` 的值应为 `true`。
 
 6. 保存文件。
 

@@ -4,7 +4,7 @@
 
 English | [中文](/README-zh.md)
 
-This is an example project by PingCAP for connecting to TiDB using the mysqlclient library.
+This is an example project by PingCAP for connecting to TiDB using the Hibernate library.
 
 > TiDB is a MySQL-compatible database. [Hibernate](https://hibernate.org/orm/) is a currently popular open-source Java application persistence framework. Hibernate supports TiDB dialect from version `6.0.0.Beta2` and above, perfectly adapting to TiDB's features.
 
@@ -58,7 +58,7 @@ cd tidb-java-hibernate-quickstart
 
     Replace placeholders `{}` with values obtained from the **Connect** window.
 
-    TiDB Serverless requires a secure connection. Since mysqlclient's `ssl_mode` default is `PREFERRED`, no need to specify `CA_PATH`, set it empty. However, if you need to specify `CA_PATH` for special reasons, refer to [TiDB Cloud documentation](https://docs.pingcap.com/tidbcloud/secure-connections-to-serverless-clusters#root-certificate-default-path) for certificate paths on different operating systems.
+    TiDB Serverless requires the use of a secure connection, so the value of `USE_SSL` should be set to `true`.
 
 6. Save the file.
 
