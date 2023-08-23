@@ -1,0 +1,119 @@
+Hibernate:
+    drop table if exists player_hibernate
+Hibernate: 
+    create table player_hibernate (
+        coins integer,
+        goods integer,
+        id varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+APP: createPlayers() --> 1
+Hibernate: 
+    insert 
+    into
+        player_hibernate
+        (coins,goods,id) 
+    values
+        (?,?,?)
+APP: COMMIT;
+APP: COMMIT;
+PlayerDAO.getPlayer:
+    => id: test
+    => coins: 1
+    => goods: 1
+Hibernate: 
+    select
+        count(p1_0.id) 
+    from
+        player_hibernate p1_0
+APP: COMMIT;
+PlayerDAO.countPlayers:
+    => 1 total players
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        player_hibernate LIMIT ?
+
+[printPlayers]:
+    id       =>       test
+    coins    =>          1
+    goods    =>          1
+
+APP: COMMIT;
+APP: createPlayers() --> 2
+Hibernate: 
+    insert 
+    into
+        player_hibernate
+        (coins,goods,id) 
+    values
+        (?,?,?)
+Hibernate: 
+    insert 
+    into
+        player_hibernate
+        (coins,goods,id) 
+    values
+        (?,?,?)
+APP: COMMIT;
+PlayerDAO.createPlayers:
+    => 2 total inserted players
+
+PlayerDAO.buyGoods:
+    => this trade will fail
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        player_hibernate 
+    WHERE
+        `id` = ? FOR UPDATE
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        player_hibernate 
+    WHERE
+        `id` = ? FOR UPDATE
+APP: ROLLBACK BY LOGIC; coins or goods not enough, rollbackPlayerDAO.buyGoods:
+    => null total update players
+
+PlayerDAO.buyGoods:
+    => this trade will success
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        player_hibernate 
+    WHERE
+        `id` = ? FOR UPDATE
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        player_hibernate 
+    WHERE
+        `id` = ? FOR UPDATE
+APP: buyGoods --> sell: 2, buy: 1, amount: 2, price: 100
+Hibernate: 
+    update
+        player_hibernate 
+    set
+        coins=?,
+        goods=? 
+    where
+        id=?
+Hibernate: 
+    update
+        player_hibernate 
+    set
+        coins=?,
+        goods=? 
+    where
+        id=?
+APP: COMMIT;
+PlayerDAO.buyGoods:
+    => 2 total update players
+Hibernate: 
+    drop table if exists player_hibernate
